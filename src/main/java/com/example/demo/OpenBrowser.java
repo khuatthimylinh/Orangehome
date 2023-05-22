@@ -13,7 +13,7 @@ public class OpenBrowser {
 
 	@Test
 	public static void main(String[] args) {
-		SpringApplication.run(OpenBrowserTest.class, args);
+		
 		System.setProperty("webdriver.chrome.driver","D:\\project\\chromedriver_win32\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();

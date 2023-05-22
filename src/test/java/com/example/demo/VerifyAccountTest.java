@@ -14,13 +14,14 @@ import org.testng.Assert;
 import com.page.OrangeHomePage;
 
 @SpringBootApplication
-public class VerifyAccountTest{
+public class VerifyAccountTest extends LoginTest{
 
 	OrangeHomePage orangeHome;
 	
 	@Test
 	public void verifyAccount() {		
 		orangeHome = new OrangeHomePage();
+		orangeHome.login("Admin","admin123");
 		orangeHome.getAccount();
 		Assert.assertTrue(orangeHome.isUsernameDisplay());
 	}

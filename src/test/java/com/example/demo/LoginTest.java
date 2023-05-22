@@ -20,7 +20,7 @@ public class LoginTest{
 	@Test
 	public void Loginpage() {
 		orangeHome = new OrangeHomePage();
-		orangeHome.login();
+		orangeHome.login("Admin","admin123");
 		Assert.assertTrue(orangeHome.isUsernameDisplay());
 	}
 

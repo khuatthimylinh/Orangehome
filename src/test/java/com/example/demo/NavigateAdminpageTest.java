@@ -14,13 +14,13 @@ import org.testng.Assert;
 import com.page.OrangeHomePage;
 
 @SpringBootApplication
-public class NavigateAdminpageTest{
+public class NavigateAdminpageTest {
 	OrangeHomePage orangeHome;
-
+	LoginTest login;
 	@Test
-	public void navigateAdminpage() {
-		
+	public void navigateAdminpage(){
 		orangeHome = new OrangeHomePage();
+		orangeHome.login("Admin","admin123");
 		orangeHome.Navigate();
 		Assert.assertTrue(orangeHome.isAdminpageDisplay());
 	}

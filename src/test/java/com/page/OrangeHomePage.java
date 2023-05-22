@@ -15,34 +15,37 @@ import com.example.demo.OpenBrowserTest;
 public class OrangeHomePage {
    
     private WebDriver driver;
-    
+    OpenBrowserTest openBrowser;
+    public String chromePath = "D:\\project\\chromedriver_win32\\chromedriver.exe";
+    public String Url = "https://opensource-demo.orangehrmlive.com/";
 
     public void openUrl(){
         SpringApplication.run(OpenBrowserTest.class);
-		System.setProperty("webdriver.chrome.driver","D:\\project\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",chromePath);
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 
 		driver = new ChromeDriver(options);
-		String baseUrl = "https://opensource-demo.orangehrmlive.com";
-		driver.get(baseUrl);
+
+		driver.get(Url);
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     }
 
-    public void login(){
+    public void login(String username, String password){
         openUrl();
-        driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
+        driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
     }
-    public void Navigate(){ 
-        login();  
+    public void Navigate(){  
+        
 		driver.findElement(By.xpath("//span[text()='Admin']")).click();
     }
-    public void getAccount(){  
-        login(); 
+
+    public void getAccount(){
+
 		String username = driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).getText();
         System.out.println(username);
     }

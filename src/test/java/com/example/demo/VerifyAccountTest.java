@@ -21,7 +21,6 @@ public class VerifyAccountTest{
 	@Test
 	public void verifyAccount() {		
 		orangeHome = new OrangeHomePage();
-		orangeHome.login();
 		orangeHome.getAccount();
 		Assert.assertTrue(orangeHome.isUsernameDisplay());
 	}

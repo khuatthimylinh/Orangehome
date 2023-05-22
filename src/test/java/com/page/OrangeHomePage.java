@@ -37,10 +37,12 @@ public class OrangeHomePage {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
     }
-    public void Navigate(){   
+    public void Navigate(){ 
+        login();  
 		driver.findElement(By.xpath("//span[text()='Admin']")).click();
     }
-    public void getAccount(){   
+    public void getAccount(){  
+        login(); 
 		String username = driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).getText();
         System.out.println(username);
     }

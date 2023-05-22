@@ -21,7 +21,6 @@ public class NavigateAdminpageTest{
 	public void navigateAdminpage() {
 		
 		orangeHome = new OrangeHomePage();
-		orangeHome.login();
 		orangeHome.Navigate();
 		Assert.assertTrue(orangeHome.isAdminpageDisplay());
 	}

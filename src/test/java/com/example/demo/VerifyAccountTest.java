@@ -9,21 +9,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.testng.Assert;
 
-import com.page.OrangeHome;
+import com.page.OrangeHomePage;
 
 @SpringBootApplication
-public class NavigateAdminpage{
+public class VerifyAccountTest{
 
-	OrangeHome orangeHome;
-	public WebDriver driver;
+	OrangeHomePage orangeHome;
+	
 	@Test
-	public void verifyAccount() {
-		
-		orangeHome = new OrangeHome();
-		orangeHome.openUrl();
-		orangeHome.login("Admin","admin123");
-		orangeHome.Navigate();
+	public void verifyAccount() {		
+		orangeHome = new OrangeHomePage();
+		orangeHome.login();
+		orangeHome.getAccount();
+		Assert.assertTrue(orangeHome.isUsernameDisplay());
 	}
 
 }

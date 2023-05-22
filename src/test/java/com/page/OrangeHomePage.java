@@ -10,24 +10,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.boot.SpringApplication;
 
-import com.example.demo.OpenBrowser;
+import com.example.demo.OpenBrowserTest;
 
-public class OrangeHome {
-    @FindBy(name = "username")
-    private WebElement textusername;
-
-    @FindBy(name = "password")
-    private WebElement textpassword;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement btnsubmit;
+public class OrangeHomePage {
+   
     private WebDriver driver;
-    // public WebDriver getDriver(){
-    //     return driver;
-    // }
+    
 
     public void openUrl(){
-        SpringApplication.run(OpenBrowser.class);
+        SpringApplication.run(OpenBrowserTest.class);
 		System.setProperty("webdriver.chrome.driver","D:\\project\\chromedriver_win32\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
@@ -39,17 +30,31 @@ public class OrangeHome {
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     }
 
-    public void login(String username, String password){
-        driver.findElement(By.name("username")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
+    public void login(){
+        openUrl();
+        driver.findElement(By.name("username")).sendKeys("Admin");
+		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
     }
     public void Navigate(){   
 		driver.findElement(By.xpath("//span[text()='Admin']")).click();
     }
-    public void getText(){   
+    public void getAccount(){   
 		String username = driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).getText();
         System.out.println(username);
     }
+
+    public boolean isloginDisplay(){
+        return driver.findElement(By.xpath("//h5")).isDisplayed();
+    }
+
+    public boolean isUsernameDisplay(){
+        return driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).isDisplayed();
+    }
+
+    public boolean isAdminpageDisplay(){
+        return driver.findElement(By.xpath("//h6")).isDisplayed();
+    }
+    
 }

@@ -9,20 +9,28 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-import com.page.OrangeHomePage;
+import com.page.BaseTest;
+
 
 @SpringBootApplication
-public class OpenBrowserTest{
-	OrangeHomePage orangeHome;
+public class OpenBrowserTest extends BaseTest{
+	BaseTest baseTest;
+	private String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
 	@Test
 	public void Open() {
-		orangeHome = new OrangeHomePage();
-		orangeHome.openUrl();
-		Assert.assertTrue(orangeHome.isloginDisplay());
+		baseTest = new BaseTest();
+		baseTest.openUrl();
+		Assert.assertEquals(driver.getCurrentUrl(),url);
 
 	}
-
+	
+	@AfterTest
+	public void tearDown(){
+		super.tearDown(driver);
+	}
 }

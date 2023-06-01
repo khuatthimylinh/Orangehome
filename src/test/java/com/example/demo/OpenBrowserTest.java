@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import com.page.BaseTest;
 
 
-@SpringBootApplication
+
 public class OpenBrowserTest extends BaseTest{
 	BaseTest baseTest;
 	private String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";

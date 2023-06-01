@@ -28,7 +28,7 @@ public class VerifyAccountTest extends BaseTest{
 	LoginPage login;
 	VerifyAccountPage getaccount;
 	
-	@Test(dataProvider = "account", dataProviderClass = param.class)
+	@Test(dataProvider = "data", dataProviderClass = param.class)
 	public void verifyAccount(String username, String password) {		
 		login = new LoginPage();
 		login.login(username,password);

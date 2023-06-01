@@ -24,7 +24,7 @@ import com.page.LoginPage;
 public class LoginTest extends BaseTest{
 	LoginPage login;
 
-	@Test(dataProvider = "account", dataProviderClass = param.class)
+	@Test(dataProvider = "data", dataProviderClass = param.class)
 	public void loginTest(String username, String password) {
 
 		login = new LoginPage();

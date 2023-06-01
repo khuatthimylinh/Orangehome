@@ -26,7 +26,7 @@ public class NavigateAdminpageTest extends BaseTest{
 	NavigateAdminPage navigateAdmin;
 	private String url_Admin = "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers";
 
-	@Test(dataProvider = "account", dataProviderClass = param.class)
+	@Test(dataProvider = "data", dataProviderClass = param.class)
 	public void navigateAdminpage(String username, String password){
 		login = new LoginPage();
 		login.login(username,password);

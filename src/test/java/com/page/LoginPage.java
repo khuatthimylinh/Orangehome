@@ -24,20 +24,8 @@ public class LoginPage extends BaseTest{
     private By txtUsername = (By.name("username"));
     private By txtPassword = (By.name("password"));
     private By btnSubmit = By.xpath("//button[@type='submit']");
+    private By logoIcon = By.xpath("//div[@class='oxd-brand-banner']");
      
-
-    // public void inputUsername(String username){
-    //     wait.until(ExpectedConditions.visibilityOfElementLocated(txtUsername)).sendKeys(username);
-    // }
-
-    // public void inputPassword(String password){
-    //     wait.until(ExpectedConditions.visibilityOfElementLocated(txtPassword)).sendKeys(password);
-    // }
-
-    // public void clickSubmit(){
-    //     wait.until(ExpectedConditions.visibilityOfElementLocated(btnSubmit)).click();
-    // }
-
     public void login(String username, String password){
         openUrl();
         driver.findElement(txtUsername).sendKeys(username);
@@ -48,7 +36,7 @@ public class LoginPage extends BaseTest{
 
     }
     public boolean isLogoDisplay(){
-        return driver.findElement(By.xpath("//div[@class='oxd-brand-banner']")).isDisplayed();
+        return driver.findElement(logoIcon).isDisplayed();
     }
     
 }

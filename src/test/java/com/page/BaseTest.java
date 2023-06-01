@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -16,6 +17,7 @@ import org.testng.annotations.DataProvider;
 
 import com.example.demo.OpenBrowserTest;
 
+@SpringBootApplication
 public class BaseTest {
     protected static WebDriver driver;
     public String chromePath = "D:\\project\\chromedriver_win32\\chromedriver.exe";

@@ -1,7 +1,6 @@
 package com.page;
 
 import java.sql.DriverManager;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -14,11 +13,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.SpringApplication;
 
 import com.example.demo.OpenBrowserTest;
 
-import bsh.org.objectweb.asm.Constants;
+import common.BaseTest;
 
 public class TimesheetPage extends BaseTest{
 
@@ -57,9 +55,9 @@ public class TimesheetPage extends BaseTest{
 
     
     
-    public void EditMyTimesheet(String project, String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday){  
+    public void EditMyTimesheet(String project, String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday) throws InterruptedException{  
         
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //Thread.sleep(3000);
 
 	    driver.findElement(lbTime).click();
         driver.findElement(lbtimesheet).click();
@@ -74,16 +72,18 @@ public class TimesheetPage extends BaseTest{
         // driver.findElement(dpdProjectName).click();
         
         //edit passed
-        for (int i = 0; i <= 2; i++) {
+        for (int i = 0; i <= 1; i++) {
             driver.findElement(txtProjectName).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
             driver.findElement(txtProjectName).click();
             driver.findElement(txtProjectName).sendKeys(project);
-            wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
+            Thread.sleep(2000);
+            // wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
             driver.findElement(dpdProjectName).click();
         }
         
         driver.findElement(txtActivity).click();
-        wait.until(ExpectedConditions.elementToBeClickable(dpdActivity));
+        Thread.sleep(2000);
+        //wait.until(ExpectedConditions.elementToBeClickable(dpdActivity));
         driver.findElement(dpdActivity).click();
 
         WebElement time1 = driver.findElement(txttime1);
@@ -91,7 +91,7 @@ public class TimesheetPage extends BaseTest{
         time1.sendKeys(monday);
         
         WebElement time2 = driver.findElement(txttime2);
-        wait.until(ExpectedConditions.elementToBeClickable(time2));
+        //wait.until(ExpectedConditions.elementToBeClickable(time2));
         time2.click();
         time2.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         time2.sendKeys(tuesday);
@@ -117,13 +117,15 @@ public class TimesheetPage extends BaseTest{
         time7.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         time7.sendKeys(sunday);
 
-        wait.until(ExpectedConditions.elementToBeClickable(btnSave));
+        //wait.until(ExpectedConditions.elementToBeClickable(btnSave));
         driver.findElement(btnSave).click();
 
     }
 
-    public String msgSuccessDisplay(){
-        WebElement msgSuccess = wait.until(ExpectedConditions.visibilityOfElementLocated(messageSuccess)); 
+    public String msgSuccessDisplay() throws InterruptedException {
+        //WebElement msgSuccess = wait.until(ExpectedConditions.visibilityOfElementLocated(messageSuccess));
+        WebElement msgSuccess = driver.findElement(messageSuccess);
+        Thread.sleep(1500);
         System.out.println(msgSuccess.getText());
          return msgSuccess.getText();
         

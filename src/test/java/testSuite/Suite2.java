@@ -1,27 +1,22 @@
-package com.example.demo;
+package testSuite;
 
-import java.util.concurrent.TimeUnit;
-
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.example.data.param;
 import com.page.LoginPage;
+import com.page.PunchINOutPage;
 import com.page.TimesheetPage;
 
 import common.BaseTest;
 
-public class EditTimesheetSuccessTest extends BaseTest{
-	LoginPage login;
-	TimesheetPage timesheet;
-	private String expectedText = "Successfully Saved";
+public class Suite2 extends BaseTest{
+    LoginPage login;
+    TimesheetPage timesheet;
+    PunchINOutPage punchInOut;
+    private String expectedText = "Successfully Saved";
 	private String expectedProject = "The Coca-Cola Company - Coke - Phase 1";
 	private String expectedActivity ="Administration";
 	private String expectedMon ="01:00";
@@ -31,8 +26,18 @@ public class EditTimesheetSuccessTest extends BaseTest{
 	private String expectedFri ="05:00";
 	private String expectedSat ="06:00";
 	private String expectedSun ="07:00";
-	
-	@Test(dataProvider = "dataTimesheet", dataProviderClass = param.class)
+
+    private String ExpectedMsg = "Successfully Saved";
+	private String ExpectedPunchIn = "2023-06-07 05:00 PM GMT +07:00";
+	private String ExpectedPunchOut = "2023-06-07 06:00 PM GMT +07:00";
+
+    @BeforeTest
+	public void beforeTest(){
+		super.openUrl();
+	}
+    
+
+    @Test(dataProvider = "dataTimesheet", dataProviderClass = param.class)
 	public void editTimesheetSuccessTest(String username, String password, String project, String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday ) throws InterruptedException{
 		login = new LoginPage();
 		login.login(username,password);
@@ -52,7 +57,23 @@ public class EditTimesheetSuccessTest extends BaseTest{
 		Assert.assertEquals(timesheet.getSun(), expectedSun);
 	}
 
-	@AfterTest
+    @Test(dataProvider = "dataTimeInOut", dataProviderClass = param.class)
+	public void punchInOutTest( String timeIn, String timeOut) throws InterruptedException{
+		punchInOut = new PunchINOutPage();
+		punchInOut.UpdatePunchIn(timeIn);
+		Assert.assertEquals(punchInOut.msgSuccessDisplay(), ExpectedMsg);
+
+		Thread.sleep(8000);
+		
+		punchInOut.UpdatePunchOut(timeOut);
+		Assert.assertEquals(punchInOut.msgSuccessDisplay(), ExpectedMsg);
+
+		punchInOut.checkoutMyrecord();
+		Assert.assertEquals(punchInOut.getPunchIn(), ExpectedPunchIn);
+		Assert.assertEquals(punchInOut.getPunchOut(), ExpectedPunchOut);
+	}
+
+    @AfterTest
 	public void tearDown(){
 		super.tearDown(driver);
 	}

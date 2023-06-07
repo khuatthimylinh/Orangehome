@@ -2,6 +2,8 @@ package com.page;
 
 import org.openqa.selenium.By;
 
+import common.BaseTest;
+
 public class VerifyAccountPage extends BaseTest{
     private By name = By.xpath("//p[@class='oxd-userdropdown-name']");
 

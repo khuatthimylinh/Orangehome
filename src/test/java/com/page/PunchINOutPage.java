@@ -1,7 +1,6 @@
 package com.page;
 
 import java.sql.DriverManager;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,11 +15,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.SpringApplication;
 
 import com.example.demo.OpenBrowserTest;
 
-import bsh.org.objectweb.asm.Constants;
+import common.BaseTest;
 
 public class PunchINOutPage extends BaseTest{
 
@@ -41,14 +39,14 @@ public class PunchINOutPage extends BaseTest{
     
     public void UpdatePunchIn(String timeIn) throws InterruptedException{  
         
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	    driver.findElement(lbTime).click();
         driver.findElement(lbattendance).click();
         driver.findElement(lbPunchInOut).click();
 
         Thread.sleep(3000);
-        wait.until(ExpectedConditions.elementToBeClickable(txtTime));
+        //wait.until(ExpectedConditions.elementToBeClickable(txtTime));
         driver.findElement(txtTime).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         driver.findElement(txtTime).sendKeys(timeIn);
         driver.findElement(btnIn).click();
@@ -57,7 +55,7 @@ public class PunchINOutPage extends BaseTest{
 
     public void UpdatePunchOut(String timeOut){  
         
-        wait.until(ExpectedConditions.elementToBeClickable(txtTime));
+        //wait.until(ExpectedConditions.elementToBeClickable(txtTime));
         driver.findElement(txtTime).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         driver.findElement(txtTime).sendKeys(timeOut);
         driver.findElement(btnOut).click();
@@ -82,8 +80,10 @@ public class PunchINOutPage extends BaseTest{
         return out.getText();
     }
 
-    public String msgSuccessDisplay(){
-        WebElement Success = wait.until(ExpectedConditions.visibilityOfElementLocated(msgSuccess)); 
+    public String msgSuccessDisplay() throws InterruptedException {
+        //WebElement Success = wait.until(ExpectedConditions.visibilityOfElementLocated(msgSuccess));
+        WebElement Success = driver.findElement(msgSuccess);
+        Thread.sleep(1500);
         System.out.println(Success.getText());
          return Success.getText();
         

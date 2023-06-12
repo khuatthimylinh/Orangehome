@@ -29,18 +29,18 @@ public class VerifyAccountTest extends BaseTest{
 	
 	@Test(dataProvider = "data", dataProviderClass = param.class)
 	public void verifyAccount(String username, String password) {		
-		login = new LoginPage();
-		login.login(username,password);
+//		login = new LoginPage();
+//		login.login(username,password);
 
 		getaccount = new VerifyAccountPage();
 		getaccount.getAccount();
 
 	}
 
-	@AfterTest
-	public void tearDown(){
-		super.tearDown(driver);
-	}
+//	@AfterTest
+//	public void tearDown(){
+//		super.tearDown(driver);
+//	}
 	
 
 }

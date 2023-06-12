@@ -27,8 +27,8 @@ public class NavigateAdminpageTest extends BaseTest{
 
 	@Test(dataProvider = "data", dataProviderClass = param.class)
 	public void navigateAdminpage(String username, String password){
-		login = new LoginPage();
-		login.login(username,password);
+//		login = new LoginPage();
+//		login.login(username,password);
 
 		navigateAdmin = new NavigateAdminPage();
 		navigateAdmin.Navigate();

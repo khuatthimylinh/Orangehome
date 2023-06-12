@@ -1,53 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-07T16:50:21 ICT" name="Suite" finished-at="2023-06-07T16:51:25 ICT" duration-ms="64066">
+  <suite started-at="2023-06-12T17:40:04 ICT" name="Test Suite 2" finished-at="2023-06-12T17:40:53 ICT" duration-ms="49128">
     <groups>
     </groups>
-    <test started-at="2023-06-07T16:50:21 ICT" name="Test Suite 1" finished-at="2023-06-07T16:50:33 ICT" duration-ms="11454">
-      <class name="testSuite.Suite1">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:testSuite.Suite1@3246fb96]" started-at="2023-06-07T16:50:21 ICT" name="beforeTest" finished-at="2023-06-07T16:50:26 ICT" duration-ms="5171" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:testSuite.Suite1@3246fb96]" started-at="2023-06-07T16:50:26 ICT" name="loginTest" data-provider="data" finished-at="2023-06-07T16:50:30 ICT" duration-ms="3479" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="navigateAdminpage()[pri:0, instance:testSuite.Suite1@3246fb96]" started-at="2023-06-07T16:50:30 ICT" name="navigateAdminpage" finished-at="2023-06-07T16:50:32 ICT" duration-ms="1690" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateAdminpage -->
-        <test-method signature="verifyAccount()[pri:0, instance:testSuite.Suite1@3246fb96]" started-at="2023-06-07T16:50:32 ICT" name="verifyAccount" finished-at="2023-06-07T16:50:32 ICT" duration-ms="865" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAccount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testSuite.Suite1@3246fb96]" started-at="2023-06-07T16:50:32 ICT" name="tearDown" finished-at="2023-06-07T16:50:33 ICT" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testSuite.Suite1 -->
-    </test> <!-- Test Suite 1 -->
-    <test started-at="2023-06-07T16:50:33 ICT" name="Test Suite2" finished-at="2023-06-07T16:51:25 ICT" duration-ms="52554">
-      <class name="testSuite.Suite2">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:testSuite.Suite2@48974e45]" started-at="2023-06-07T16:50:33 ICT" name="beforeTest" finished-at="2023-06-07T16:50:38 ICT" duration-ms="5016" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="editTimesheetSuccessTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testSuite.Suite2@48974e45]" started-at="2023-06-07T16:50:38 ICT" name="editTimesheetSuccessTest" data-provider="dataTimesheet" finished-at="2023-06-07T16:51:02 ICT" duration-ms="23834" status="PASS">
+    <test started-at="2023-06-12T17:40:04 ICT" name="Suite 2" finished-at="2023-06-12T17:40:53 ICT" duration-ms="49128">
+      <class name="com.example.demo.EditTimesheetSuccessTest">
+        <test-method signature="editTimesheetSuccessTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.example.demo.EditTimesheetSuccessTest@2dde1bff]" started-at="2023-06-12T17:40:04 ICT" name="editTimesheetSuccessTest" data-provider="dataTimesheet" finished-at="2023-06-12T17:40:28 ICT" duration-ms="24508" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,11 +63,13 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editTimesheetSuccessTest -->
-        <test-method signature="punchInOutTest(java.lang.String,java.lang.String)[pri:0, instance:testSuite.Suite2@48974e45]" started-at="2023-06-07T16:51:02 ICT" name="punchInOutTest" data-provider="dataTimeInOut" finished-at="2023-06-07T16:51:25 ICT" duration-ms="23472" status="PASS">
+      </class> <!-- com.example.demo.EditTimesheetSuccessTest -->
+      <class name="com.example.demo.PunchINOUTTest">
+        <test-method signature="punchInOutTest(java.lang.String,java.lang.String)[pri:0, instance:com.example.demo.PunchINOUTTest@15bbf42f]" started-at="2023-06-12T17:40:28 ICT" name="punchInOutTest" data-provider="dataTimeInOut" finished-at="2023-06-12T17:40:53 ICT" duration-ms="24319" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[05:00 PM]]>
+                <![CDATA[05:45 PM]]>
               </value>
             </param>
             <param index="1">
@@ -119,11 +81,85 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- punchInOutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testSuite.Suite2@48974e45]" started-at="2023-06-07T16:51:25 ICT" name="tearDown" finished-at="2023-06-07T16:51:25 ICT" duration-ms="227" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.demo.PunchINOUTTest@15bbf42f]" started-at="2023-06-12T17:40:53 ICT" name="tearDown" finished-at="2023-06-12T17:40:53 ICT" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testSuite.Suite2 -->
-    </test> <!-- Test Suite2 -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.example.demo.PunchINOUTTest -->
+    </test> <!-- Suite 2 -->
+  </suite> <!-- Test Suite 2 -->
+  <suite started-at="2023-06-12T17:40:53 ICT" name="All Test Suite" finished-at="2023-06-12T17:40:53 ICT" duration-ms="0">
+    <groups>
+    </groups>
+  </suite> <!-- All Test Suite -->
+  <suite started-at="2023-06-12T17:39:52 ICT" name="Test Suite 1" finished-at="2023-06-12T17:40:04 ICT" duration-ms="11452">
+    <groups>
+    </groups>
+    <test started-at="2023-06-12T17:39:52 ICT" name="Suite 1" finished-at="2023-06-12T17:40:04 ICT" duration-ms="11452">
+      <class name="com.example.demo.VerifyAccountTest">
+        <test-method signature="verifyAccount(java.lang.String,java.lang.String)[pri:0, instance:com.example.demo.VerifyAccountTest@5552768b]" started-at="2023-06-12T17:40:02 ICT" name="verifyAccount" data-provider="data" finished-at="2023-06-12T17:40:02 ICT" duration-ms="48" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccount -->
+      </class> <!-- com.example.demo.VerifyAccountTest -->
+      <class name="com.example.demo.NavigateAdminpageTest">
+        <test-method signature="navigateAdminpage(java.lang.String,java.lang.String)[pri:0, instance:com.example.demo.NavigateAdminpageTest@61386958]" started-at="2023-06-12T17:40:02 ICT" name="navigateAdminpage" data-provider="data" finished-at="2023-06-12T17:40:03 ICT" duration-ms="1624" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateAdminpage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.demo.NavigateAdminpageTest@61386958]" started-at="2023-06-12T17:40:03 ICT" name="tearDown" finished-at="2023-06-12T17:40:04 ICT" duration-ms="271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.demo.NavigateAdminpageTest -->
+      <class name="com.example.demo.LoginTest">
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.example.demo.LoginTest@671a5887]" started-at="2023-06-12T17:39:58 ICT" name="loginTest" data-provider="data" finished-at="2023-06-12T17:40:02 ICT" duration-ms="3718" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+      </class> <!-- com.example.demo.LoginTest -->
+      <class name="com.example.demo.OpenBrowserTest">
+        <test-method signature="Open()[pri:0, instance:com.example.demo.OpenBrowserTest@50caa560]" started-at="2023-06-12T17:39:52 ICT" name="Open" finished-at="2023-06-12T17:39:58 ICT" duration-ms="5737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Open -->
+      </class> <!-- com.example.demo.OpenBrowserTest -->
+    </test> <!-- Suite 1 -->
+  </suite> <!-- Test Suite 1 -->
 </testng-results>

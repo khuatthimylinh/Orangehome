@@ -15,7 +15,7 @@ public class param {
 
 	@DataProvider(name = "dataTimeInOut")
     Object[][] dataInOut() {
-		return new Object[][]{{"05:00 PM", "06:00 PM"}};
+		return new Object[][]{{"05:45 PM", "06:00 PM"}};
 	}
 
 }

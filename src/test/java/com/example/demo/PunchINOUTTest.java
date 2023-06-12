@@ -24,13 +24,13 @@ public class PunchINOUTTest extends BaseTest{
 	LoginPage login;
 	PunchINOutPage punchInOut;
 	private String ExpectedMsg = "Successfully Saved";
-	private String ExpectedPunchIn = "2023-06-01 03:00 PM GMT +07:00";
-	private String ExpectedPunchOut = "2023-06-01 06:00 PM GMT +07:00";
+	private String ExpectedPunchIn = "2023-06-12 05:45 PM GMT +07:00";
+	private String ExpectedPunchOut = "2023-06-12 06:00 PM GMT +07:00";
 	
 	@Test(dataProvider = "dataTimeInOut", dataProviderClass = param.class)
-	public void punchInOutTest(String username, String password, String timeIn, String timeOut) throws InterruptedException{
-		login = new LoginPage();
-		login.login(username,password);
+	public void punchInOutTest(String timeIn, String timeOut) throws InterruptedException{
+//		login = new LoginPage();
+//		login.login(username,password);
 
 		punchInOut = new PunchINOutPage();
 		punchInOut.UpdatePunchIn(timeIn);

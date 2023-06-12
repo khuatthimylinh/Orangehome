@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test Suite2(failed)">
+<suite name="Failed suite [Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test Suite 1(failed)">
     <classes>
-      <class name="testSuite.Suite2">
+      <class name="com.example.demo.VerifyAccountTest">
         <methods>
-          <include name="punchInOutTest" invocation-numbers="0"/>
-          <include name="beforeTest"/>
-          <include name="tearDown"/>
-          <include name="editTimesheetSuccessTest" invocation-numbers="0"/>
+          <include name="verifyAccount" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testSuite.Suite2 -->
+      </class> <!-- com.example.demo.VerifyAccountTest -->
+      <class name="com.example.demo.NavigateAdminpageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="navigateAdminpage" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.example.demo.NavigateAdminpageTest -->
     </classes>
-  </test> <!-- Test Suite2(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Test Suite 1(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->

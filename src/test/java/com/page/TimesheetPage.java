@@ -65,21 +65,21 @@ public class TimesheetPage extends BaseTest{
         driver.findElement(btnEdit).click();
 
         //edit failed
-        // driver.findElement(txtProjectName).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-        // driver.findElement(txtProjectName).click();
-        // driver.findElement(txtProjectName).sendKeys(project);
-        // wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
-        // driver.findElement(dpdProjectName).click();
+         driver.findElement(txtProjectName).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+         driver.findElement(txtProjectName).click();
+         driver.findElement(txtProjectName).sendKeys(project);
+         //wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
+         driver.findElement(dpdProjectName).click();
         
         //edit passed
-        for (int i = 0; i <= 1; i++) {
-            driver.findElement(txtProjectName).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-            driver.findElement(txtProjectName).click();
-            driver.findElement(txtProjectName).sendKeys(project);
-            Thread.sleep(2000);
-            // wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
-            driver.findElement(dpdProjectName).click();
-        }
+//        for (int i = 0; i <= 2; i++) {
+//            driver.findElement(txtProjectName).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+//            driver.findElement(txtProjectName).click();
+//            driver.findElement(txtProjectName).sendKeys(project);
+//            Thread.sleep(2000);
+//            // wait.until(ExpectedConditions.elementToBeClickable(dpdProjectName));
+//            driver.findElement(dpdProjectName).click();
+//        }
         
         driver.findElement(txtActivity).click();
         Thread.sleep(2000);

@@ -34,6 +34,8 @@ public class EditTimesheetSuccessTest extends BaseTest{
 	
 	@Test(dataProvider = "dataTimesheet", dataProviderClass = param.class)
 	public void editTimesheetSuccessTest(String username, String password, String project, String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday ) throws InterruptedException{
+
+		openUrl();
 		login = new LoginPage();
 		login.login(username,password);
 
@@ -52,9 +54,9 @@ public class EditTimesheetSuccessTest extends BaseTest{
 		Assert.assertEquals(timesheet.getSun(), expectedSun);
 	}
 
-	@AfterTest
-	public void tearDown(){
-		super.tearDown(driver);
-	}
+//	@AfterTest
+//	public void tearDown(){
+//		super.tearDown(driver);
+//	}
 
 }

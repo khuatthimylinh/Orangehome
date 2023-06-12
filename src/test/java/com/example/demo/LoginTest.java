@@ -32,9 +32,9 @@ public class LoginTest extends BaseTest{
 
 	}
 	
-	@AfterTest
-	public void tearDown(){
-		super.tearDown(driver);
-	}
+//	@AfterTest
+//	public void tearDown(){
+//		super.tearDown(driver);
+//	}
 
 }
